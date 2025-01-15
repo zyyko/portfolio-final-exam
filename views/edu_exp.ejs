@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/edu_exp_style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header"></header>
+    <div id="background">
+      <h2 class="heading-ed-ex">Education</h2>
+
+      <section class="timeline">
+        <div class="timeline-row">
+          <!-- Education Section -->
+          <div class="timeline-column">
+            <h2 class="title">
+              Education<span class="animate" style="--i: 1"></span>
+            </h2>
+            <div class="timeline-box">
+              <% education.forEach((edu) => { %>
+              <div class="timeline-content">
+                <div class="content">
+                  <div class="year">
+                    <i class="bx bxs-calendar"></i><%= edu.education_date %>
+                  </div>
+                  <h3><%= edu.education_name %></h3>
+                  <p><%= edu.education_description %></p>
+                </div>
+              </div>
+              <% }); %>
+              <span class="animate" style="--i: 2"></span>
+            </div>
+          </div>
+
+          <!-- Experience Section -->
+          <div class="timeline-column">
+            <h2 class="title">
+              Experience<span class="animate" style="--i: 4"></span>
+            </h2>
+            <div class="timeline-box">
+              <% experience.forEach((exp) => { %>
+              <div class="timeline-content">
+                <div class="content">
+                  <div class="year">
+                    <i class="bx bxs-calendar"></i><%= exp.experience_date %>
+                  </div>
+                  <h3><%= exp.experience_name %></h3>
+                  <p><%= exp.experience_description %></p>
+                </div>
+              </div>
+              <% }); %>
+              <span class="animate" style="--i: 5"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+</html>

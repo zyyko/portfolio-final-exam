@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #101010;
+  --text-color: white;
+  --main-color: #ea580c;
+}
+
+canvas {
+  height: 100vh;
+  z-index: -100000;
+  position: fixed;
+  top: 0px;
+}
+
+/* :root {
+  --bg-color: #1a1a1a;
+  --second-bg-color: #252525;
+  --text-color: white;
+  --main-color: #3498db; Changed to blue 
+} */
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.heading {
+  text-align: center;
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+
+.service-wrapper {
+  padding: 5% 8%;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.services .card {
+  height: 350px;
+  width: 370px;
+  background-color: var(--second-bg-color); /* Updated */
+  padding: 3% 8%;
+  border: 0.2px solid rgba(144, 226, 174, 0.2);
+  border-radius: 8px;
+  transition: 0.6s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.services .card:after {
+  content: "";
+  position: absolute;
+  top: 150%;
+  left: -200px;
+  width: 120%;
+  transform: rotate(50deg);
+  background-color: #8ce88c; /* bright color */
+  height: 18px;
+  filter: blur(30px);
+  opacity: 0.5;
+  transition: 1s;
+  transition-delay: 0.3s; /* Added delay */
+}
+.services .card:hover:after {
+  width: 225%;
+  top: -100%;
+  transition-delay: 0s; /* Remove delay when hovering */
+}
+
+.services .card i {
+  color: var(--main-color);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 4.8rem;
+}
+
+.services .card h2 {
+  color: var(--text-color); /* Updated */
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.services .card p {
+  text-align: left;
+  font-size: 1.6rem;
+  width: 100%;
+  margin: 12px 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.services .card:hover {
+  background-color: var(--main-color);
+  transform: translateY(-8px);
+  border-color: var(--main-color); /* Updated */
+}
+
+.services .card:hover i {
+  color: var(--second-bg-color); /* Updated */
+}
+
+@media screen and (max-width: 1200px) {
+  .services .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .services .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Silding Effect */
+
+/* Keyframes for sliding */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state for cards */
+.card {
+  opacity: 0; /* Start hidden */
+}

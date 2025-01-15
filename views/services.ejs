@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/services_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header"></header>
+    <div id="background">
+      <div class="gtranslate_wrapper"></div>
+      <section class="services" id="services">
+        <div class="service-wrapper">
+          <div class="service">
+            <h1 class="heading">Services</h1>
+            <div class="cards">
+              <% if (services && services.length > 0) { %> <%
+              services.forEach(service => { %>
+              <div class="card">
+                <i class="fa-brands fa-chromecast"></i>
+                <h2><%= service.service_name %></h2>
+                <p><%= service.description %></p>
+              </div>
+              <% }); %> <% } else { %>
+              <p>No services available.</p>
+              <% } %>
+              <div class="card">
+                <i class="fa-brands fa-chromecast"></i>
+                <h2>Business Strategy</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores accusamus sed sapiente minima incidunt accusantium
+                  voluptatibus dolorum aliquam. Recusandae, voluptatum?
+                </p>
+              </div>
+              <!--               <div class="card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h2>Website Developement</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores accusamus sed sapiente minima incidunt accusantium
+                  voluptatibus dolorum aliquam. Recusandae, voluptatum?
+                </p>
+              </div> -->
+              <!--               <div class="card">
+                <i class="fa-solid fa-user-group"></i>
+                <h2>Marketing And Reporting</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores accusamus sed sapiente minima incidunt accusantium
+                  voluptatibus dolorum aliquam. Recusandae, voluptatum?
+                </p>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-desktop"></i>
+                <h2>Mobile Developement</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores accusamus sed sapiente minima incidunt accusantium
+                  voluptatibus dolorum aliquam. Recusandae, voluptatum?
+                </p>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-camera"></i>
+                <h2>Graphic Design</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores accusamus sed sapiente minima incidunt accusantium
+                  voluptatibus dolorum aliquam. Recusandae, voluptatum?
+                </p>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-gear"></i>
+                <h2>Other</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores accusamus sed sapiente minima incidunt accusantium
+                  voluptatibus dolorum aliquam. Recusandae, voluptatum?
+                </p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+
+      const observerOptions = {
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            if (index % 2 === 0) {
+              card.style.animation = "slideInFromLeft 1s ease-out forwards";
+              card.style.animationDelay = `${index * 0.2}s`; // Staggered animation
+            } else {
+              card.style.animation = "slideInFromRight 1s ease-out forwards";
+            }
+          }
+        });
+      }, observerOptions);
+
+      cards.forEach((card) => observer.observe(card));
+    });
+  </script>
+  <script src="assets/js/translate.js"></script>
+  <script
+    src="https://cdn.gtranslate.net/widgets/latest/float.js"
+    defer
+  ></script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/projects.style.css" />
+  </head>
+  <body>
+    <header class="header"></header>
+    <div id="background">
+      <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+          <% projects.forEach(function(project) { %>
+          <div class="card">
+            <div class="img-container">
+              <img
+                src="<%= project.image_name %>"
+                alt="<%= project.project_name %>"
+              />
+            </div>
+            <div class="card-details">
+              <h2><%= project.project_name %></h2>
+              <p><%= project.description %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/animated_text.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+
+      const observerOptions = {
+        threshold: 0.5, // Trigger the animation when 50% of the card is visible
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+
+            // Apply staggered sliding from either left or right
+            if (index % 2 === 0) {
+              card.style.animation = "slideInFromLeft 1s ease-out forwards";
+              card.style.animationDelay = `${index * 0.2}s`;
+            } else {
+              card.style.animation = "slideInFromRight 1s ease-out forwards";
+              card.style.animationDelay = `${index * 0.2}s`;
+            }
+          }
+        });
+      }, observerOptions);
+
+      cards.forEach((card) => observer.observe(card));
+    });
+    // Create a <style> element to hold the CSS rules
+    const style = document.createElement("style");
+    style.innerHTML = `
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Optional: Style for the card elements */
+  .projects .container .card {
+    opacity: 0;
+  }
+`;
+
+    // Append the <style> element to the <head>
+    document.head.appendChild(style);
+
+    // Set a timeout to remove the <style> element after 5 seconds
+    setTimeout(() => {
+      document.head.removeChild(style); // Remove the <style> element after 5 seconds
+    }, 5000); // 5000ms = 5 seconds
+  </script>
+</html>

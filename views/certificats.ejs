@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/certificats_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <heading class="header"></heading>
+    <div id="background">
+      <section class="certificats-section">
+        <h2 class="heading">Certificats</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+          <% certificates.forEach(certificate => { %>
+          <div
+            class="item"
+            style="background-image: url('<%= certificate.image %>')"
+          >
+            <div class="item-desc">
+              <h3><%= certificate.certificate_name %></h3>
+              <p><%= certificate.description %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    $(".custom-carousel").owlCarousel({
+      autoWidth: true,
+      loop: true,
+    });
+    $(document).ready(function () {
+      $(".custom-carousel .item").click(function () {
+        $(".custom-carousel .item").not($(this)).removeClass("active");
+        $(this).toggleClass("active");
+      });
+    });
+  </script>
+</html>

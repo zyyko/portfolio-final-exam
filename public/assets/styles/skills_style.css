@@ -1,0 +1,219 @@
+.skills {
+  padding: 4rem 2rem;
+}
+
+.main-text {
+  margin-top: 5rem;
+  color: var(--main-color);
+  text-align: center;
+  font-family: "Poppins";
+}
+
+.main-text span {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  font-family: "Poppins";
+  font-weight: 800;
+}
+
+.main-text h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.skill-main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 50px;
+}
+
+.skill-bar {
+  margin-bottom: 2.3rem;
+}
+
+.skill-main h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--highlight-color);
+  font-size: 2rem;
+}
+
+.skill-left .skill-bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--second-bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.skill-bar .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: var(--main-color);
+  border-radius: 25px;
+}
+
+.skill-bar .bar .html {
+  width: 72%;
+  animation: html 2s;
+}
+
+.skill-bar .bar .figma {
+  width: 90%;
+  animation: figma 2s;
+}
+
+.skill-bar .bar .javascript {
+  width: 50%;
+  animation: javascript 4s;
+}
+
+.skill-bar .bar .css {
+  width: 62%;
+  animation: css 5s;
+}
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 72%;
+  }
+}
+
+@keyframes figma {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 62%;
+  }
+}
+
+.professional {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
+}
+
+.box {
+  position: relative;
+  margin: 10px 0;
+  flex: 1 1 15rem;
+  background-color: var(--second-bg-color);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.box .text {
+  color: var(--text-color);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.box .text big {
+  font: 400;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box .text small {
+  display: block;
+  font-weight: 600;
+}
+
+.circle {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.circle .points {
+  width: 2px;
+  height: 10px;
+  background-color: var(--bg-color);
+  position: absolute;
+  border-radius: 3px;
+  transform: rotate(calc(var(--i) * var(--rot))) translateY(-45px);
+}
+
+@keyframes glow {
+  0% {
+    background: var(--bg-color);
+  }
+  100% {
+    background: var(--main-color);
+  }
+}
+
+.points.marked {
+  animation: glow 0.04s linear forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+}
+.main-text span {
+  font-size: 5rem; /* Increased the font size for this text */
+}
+
+.main-text h2 {
+  font-size: 3rem; /* Increased the font size for the heading */
+}
+
+.skill-main h3 {
+  font-size: 3rem; /* Increased the font size for section titles */
+}
+
+.skill-bar .info p {
+  font-size: 2rem; /* Increased the font size for skill percentages */
+}
+
+.box .text big {
+  font-size: 2.2rem; /* Increased the font size for percentages in the boxes */
+}
+
+.box .text small {
+  font-size: 2rem; /* Increased the font size for skill labels */
+}
+
+/* Sliding Effect */

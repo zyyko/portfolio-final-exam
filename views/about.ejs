@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/about_style.css" />
+    <style></style>
+  </head>
+  <body>
+    <header class="header"></header>
+    <div id="background">
+      <div class="gtranslate_wrapper"></div>
+      <section class="about" id="about">
+        <div class="about-img">
+          <img src="<%= image %>" alt="" />
+        </div>
+
+        <div class="about-content">
+          <h2>About <span>Me</span></h2>
+          <p><%= text %></p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script src="assets/js/translate.js"></script>
+  <script
+    src="https://cdn.gtranslate.net/widgets/latest/float.js"
+    defer
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const aboutSection = document.querySelector(".about");
+      const aboutImg = document.querySelector(".about-img");
+      const aboutContent = document.querySelector(".about-content");
+
+      const options = {
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            aboutImg.style.animation = "slideFromLeft 1.5s ease-out forwards";
+            aboutContent.style.animation =
+              "slideFromRight 1.5s ease-out forwards";
+          }
+        });
+      }, options);
+
+      observer.observe(aboutSection);
+    });
+  </script>
+</html>

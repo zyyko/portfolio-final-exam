@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/styles/home_style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div id="background">
+      <div class="gtranslate_wrapper"></div>
+      <header class="header"></header>
+      <section class="home" id="home">
+        <div class="home-content">
+          <h1>Hi, It's <span><%= firstname %></span></h1>
+          <h3 class="text-animation">I'm a <span></span></h3>
+          <p><%= home_text %></p>
+          <div class="social-icons">
+            <a href="#">
+              <i class="bx bxl-github"></i>
+            </a>
+
+            <a href="#">
+              <i class="bx bxl-linkedin-square"></i>
+            </a>
+            <a href="#">
+              <i class="bx bxl-instagram-alt"></i>
+            </a>
+
+            <a href="#">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </div>
+          <div class="btn-group">
+            <a href="pdf_cv.pdf" download class="btn">Download</a>
+            <a href="/contact" class="btn">Contact</a>
+          </div>
+        </div>
+
+        <div class="home-img">
+          <img src="<%= image %>" alt="" />
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/animated_text.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script src="assets/js/translate.js"></script>
+  <script
+    src="https://cdn.gtranslate.net/widgets/latest/float.js"
+    defer
+  ></script>
+</html>

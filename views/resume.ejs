@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/edu_exp_style.css" />
+    <link rel="stylesheet" href="assets/styles/certificats_style.css" />
+    <link rel="stylesheet" href="assets/styles/projects.style.css" />
+    <link rel="stylesheet" href="assets/styles/skills_style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <header class="header"></header>
+    <div id="background">
+      <div class="gtranslate_wrapper"></div>
+      <h2 class="heading-ed-ex">Education</h2>
+
+      <section class="timeline">
+        <div class="timeline-row">
+          <!-- Education Section -->
+          <div class="timeline-column">
+            <h2 class="title">
+              Education<span class="animate" style="--i: 1"></span>
+            </h2>
+            <div class="timeline-box">
+              <% education.forEach((edu) => { %>
+              <div class="timeline-content">
+                <div class="content">
+                  <div class="year">
+                    <i class="bx bxs-calendar"></i><%= edu.education_date %>
+                  </div>
+                  <h3><%= edu.education_name %></h3>
+                  <p><%= edu.education_description %></p>
+                </div>
+              </div>
+              <% }); %>
+              <span class="animate" style="--i: 2"></span>
+            </div>
+          </div>
+
+          <!-- Experience Section -->
+          <div class="timeline-column">
+            <h2 class="title">
+              Experience<span class="animate" style="--i: 4"></span>
+            </h2>
+            <div class="timeline-box">
+              <% experience.forEach((exp) => { %>
+              <div class="timeline-content">
+                <div class="content">
+                  <div class="year">
+                    <i class="bx bxs-calendar"></i><%= exp.experience_date %>
+                  </div>
+                  <h3><%= exp.experience_name %></h3>
+                  <p><%= exp.experience_description %></p>
+                </div>
+              </div>
+              <% }); %>
+              <span class="animate" style="--i: 5"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="certificats-section">
+        <h2 class="heading">Certificats</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+          <% certificates.forEach(certificate => { %>
+          <div
+            class="item"
+            style="background-image: url('<%= certificate.image %>')"
+          >
+            <div class="item-desc">
+              <h3><%= certificate.certificate_name %></h3>
+              <p><%= certificate.description %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+          <% projects.forEach(function(project) { %>
+          <div class="card">
+            <div class="img-container">
+              <img
+                src="<%= project.image_name %>"
+                alt="<%= project.project_name %>"
+              />
+            </div>
+            <div class="card-details">
+              <h2><%= project.project_name %></h2>
+              <p><%= project.description %></p>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="main-text">
+          <span>Technical and Professional</span>
+          <h2>My Skills</h2>
+        </div>
+
+        <div class="skill-main">
+          <div class="skill-left">
+            <h3>Technical Skills</h3>
+            <div class="skill-bar">
+              <div class="info">
+                <p>HTML</p>
+                <p>72%</p>
+              </div>
+              <div class="bar">
+                <span class="html"></span>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <div class="info">
+                <p>Figma</p>
+                <p>90%</p>
+              </div>
+              <div class="bar">
+                <span class="figma"></span>
+              </div>
+            </div>
+            <div class="skill-bar">
+              <div class="info">
+                <p>JavaScript</p>
+                <p>80%</p>
+              </div>
+              <div class="bar">
+                <span class="javascript"></span>
+              </div>
+            </div>
+            <div class="skill-bar">
+              <div class="info">
+                <p>CSS</p>
+                <p>62%</p>
+              </div>
+              <div class="bar">
+                <span class="css"></span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-right">
+            <h3>Professional Skills</h3>
+            <div class="professional">
+              <div class="box">
+                <div class="circle" data-dots="80" data-percent="50"></div>
+                <div class="text">
+                  <big>50%</big>
+                  <small>Team Work</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circle" data-dots="80" data-percent="90"></div>
+                <div class="text">
+                  <big>90%</big>
+                  <small>Leadership</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circle" data-dots="80" data-percent="85"></div>
+                <div class="text">
+                  <big>85%</big>
+                  <small>Problem Solving</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circle" data-dots="80" data-percent="75"></div>
+                <div class="text">
+                  <big>75%</big>
+                  <small>Communication</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    $(".custom-carousel").owlCarousel({
+      autoWidth: true,
+      loop: true,
+    });
+    $(document).ready(function () {
+      $(".custom-carousel .item").click(function () {
+        $(".custom-carousel .item").not($(this)).removeClass("active");
+        $(this).toggleClass("active");
+      });
+    });
+  </script>
+  <script src="assets/js/skills.js"></script>
+  <script src="assets/js/translate.js"></script>
+  <script
+    src="https://cdn.gtranslate.net/widgets/latest/float.js"
+    defer
+  ></script>
+</html>

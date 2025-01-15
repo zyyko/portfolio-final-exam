@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      href="https://uifresh.net/wp-content/uploads/2024/02/cropped-uifresh-favicon-new-1-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <title>Contact Form Example 01 · uifresh.net</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/styles/bootstrap.min.css"
+    />
+    <style>
+      a {
+        text-decoration: none;
+      }
+      :root {
+        --bg-color: #080808;
+        --second-bg-color: #101010;
+        --text-color: white;
+        --main-color: #ea580c;
+      }
+
+      a {
+        color: var(--main-color);
+      }
+
+      .container {
+        margin-top: 80px;
+      }
+      .uf-contact-form-01 {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      @media (min-width: 576px) {
+        .uf-contact-form-01 {
+          min-height: 100vh;
+          align-content: center;
+        }
+      }
+
+      .uf-img-contact-form-01 {
+        width: 350px;
+        animation: uf-animation 4s ease-in-out 1s infinite alternate;
+        position: relative;
+      }
+
+      .uf-ct-01-text-primary {
+        color: var(--main-color);
+        font-size: 1.8rem; /* Adjust text size */
+      }
+
+      .uf-ct-01-btn-primary {
+        padding: 1rem 3rem;
+        background-color: var(--main-color);
+        box-shadow: 0 0 25px var(--main-color);
+        border-radius: 3rem;
+        font-size: 1.8rem;
+        border: 2px solid transparent;
+        font-weight: 600;
+        transition: 0.3s ease-in-out;
+      }
+
+      .uf-ct-01-btn-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+      }
+
+      @keyframes uf-animation {
+        0% {
+          top: 0px;
+        }
+        50% {
+          top: -20px;
+        }
+        100% {
+          top: 0px;
+        }
+      }
+
+      .form-control {
+        font-size: 1.5rem; /* Increase text size */
+        padding: 10px; /* Add padding for better interaction */
+      }
+
+      .form-control:focus {
+        border-color: #a979ff;
+        box-shadow: 0 0 0 0.25rem rgb(103 58 183 / 21%);
+      }
+      .form-label {
+        font-size: 1.8rem; /* Increased label size */
+      }
+      p {
+        font-size: 1.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background">
+      <div class="gtranslate_wrapper"></div>
+
+      <header class="header"></header>
+      <section class="uf-contact-form-01 mx-auto">
+        <div class="container">
+          <div
+            class="row justify-content-center rounded-4 shadow py-5 gx-5 px-lg-5"
+          >
+            <!-- Left Column -->
+            <div class="col-md-5 text-center">
+              <h2
+                class="uf-ct-01-text-primary text-uppercase fw-bold"
+                style="font-size: 48px"
+              >
+                Contact Us
+              </h2>
+              <p>
+                Or reach out manually to
+                <a
+                  href="mailto:uifresh.net@gmail.com"
+                  class="text-decoration-none"
+                  >uifresh.net@gmail.com</a
+                >
+              </p>
+              <img
+                src="./images/plane.png"
+                alt="Contact Plane"
+                class="uf-img-contact-form-01 pt-4"
+              />
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+              <form>
+                <div class="mb-4">
+                  <label for="uf-imail" class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="uf-imail"
+                    aria-describedby="emailHelp"
+                    name="email"
+                  />
+                  <div id="emailHelp" class="form-text uf-ct-01-text-primary">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label for="uf-iname" class="form-label">Your name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="uf-iname"
+                    name="name"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="uf-itextarea" class="form-label"
+                    >Your message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="uf-itextarea"
+                    rows="4"
+                    name="message"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-lg uf-ct-01-btn-primary">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/animated_text.js"></script>
+  <script src="assets/js/shared_menu.js"></script>
+  <script src="assets/js/cursor_effect.js"></script>
+  <script>
+    document
+      .querySelector("form")
+      .addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("uf-imail").value;
+        const name = document.getElementById("uf-iname").value;
+        const message = document.getElementById("uf-itextarea").value;
+
+        try {
+          const response = await fetch("/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, name, message }),
+          });
+
+          const data = await response.json();
+          if (data.success) {
+            Toastify({
+              text: "Your message has been sent successfully!",
+              duration: 3000,
+              gravity: "top", // 'top' or 'bottom'
+              position: "center", // 'left', 'center' or 'right'
+              backgroundColor: "green",
+              style: {
+                fontSize: "16px",
+                padding: "16px",
+                borderRadius: "8px",
+              },
+            }).showToast();
+
+            document.querySelector("form").reset();
+          } else {
+            Toastify({
+              text: "Failed to send the message. Please try again.",
+              duration: 3000,
+              gravity: "top",
+              position: "center",
+              backgroundColor: "red",
+            }).showToast();
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          Toastify({
+            text: "An error occurred while sending your message.",
+            duration: 3000,
+            gravity: "top",
+            position: "center",
+            backgroundColor: "orange",
+          }).showToast();
+        }
+      });
+  </script>
+</html>

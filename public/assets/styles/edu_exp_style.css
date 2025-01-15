@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #101010;
+  --text-color: white;
+  --main-color: #ea580c;
+}
+
+canvas {
+  height: 100vh;
+  z-index: -100000;
+  position: fixed;
+  top: 0px;
+}
+
+/* :root {
+  --bg-color: #1a1a1a;
+  --second-bg-color: #252525;
+  --text-color: white;
+  --main-color: #3498db; Changed to blue 
+} */
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+body {
+  background: #1f242d;
+  color: #ededed;
+}
+
+.heading-ed-ex {
+  margin-top: 8rem;
+  text-align: center;
+  font-size: 7rem;
+}
+.timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 9%;
+}
+
+.timeline .timeline-row {
+  display: flex;
+  column-gap: 64px;
+  flex-wrap: wrap;
+}
+
+.timeline-row .timeline-column {
+  flex: 1 1 320px;
+}
+
+.timeline-column .title {
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  margin: 32px 0 16px 30px;
+}
+
+.timeline-column .timeline-box {
+  position: relative;
+  border-left: 2px solid var(--main-color);
+}
+
+.timeline-box .timeline-content {
+  position: relative;
+  padding-left: 27px;
+  transition: all 0.3s ease;
+}
+
+.timeline-box .timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10.5px;
+  width: 20px;
+  height: 20px;
+  background: var(--main-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline-content .content {
+  padding: 24px;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  margin-bottom: 32px;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content .content .year {
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+.timeline-content .content .year i {
+  margin-right: 8px;
+}
+
+.timeline-content .content h3 {
+  font-size: 19px;
+  margin: 8px 0;
+}
+
+.timeline-content .content p {
+  font-size: 16px;
+}
+
+.timeline-content .content:hover {
+  transform: translateY(-10px); /* Smooth lift effect */
+  box-shadow: 0 4px 20px var(--main-color); /* Box shadow on hover */
+}
+
+.timeline-content .content:hover::before {
+  background: #0ef;
+  transform: scale(1.2); /* Slightly grow the dot */
+}
+
+.animate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 105%;
+  height: 100%;
+  background: #1f242d;
+  animation: show-right 1s ease forwards;
+  animation-delay: calc(0.5s * var(--i));
+}
+
+@keyframes show-right {
+  100% {
+    width: 0;
+  }
+}
+section {
+  min-height: 100vh;
+  /* padding: 10rem 15%; */
+  padding: 10rem;
+}
