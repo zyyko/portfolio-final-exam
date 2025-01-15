@@ -16,50 +16,19 @@
         <a href="/services" class="translatable">Services</a>
         <a href="/resume">Resume</a>
         <a href="/hobbies">Hobbies</a>
-        <div class="dropdown">
+        <!-- <div class="dropdown">
           <a href="#" class="dropdown-toggle">Language</a>
           <div class="dropdown-menu">
             <a href="?lang=en"
               ><img src="images/english.png" alt="" />English</a
             >
-            <button onclick="translatePage()">fr</button>
             <a href="?lang=fr"><img src="images//france.png" alt="" />French</a>
           </div>
-        </div>
+        </div> -->
       </nav>
       <a href="/contact"><button class="gradient-btn">Contact Me</button></a>
     </header>
 
-    <script>
-      // Translate the whole page
-      function translatePage() {
-        const elements = document.querySelectorAll(".translatable");
-
-        elements.forEach(async (element) => {
-          const originalText = element.innerText;
-          const translatedText = await fetchTranslation(originalText, "fr");
-          element.innerText = translatedText;
-        });
-      }
-
-      // Fetch translation for a given text
-      async function fetchTranslation(text, targetLang) {
-        const response = await fetch(
-          `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURI(
-            text
-          )}`
-        );
-        const result = await response.json();
-
-        if (result[0] && result[0][0] && result[0][0][0]) {
-          return result[0][0][0];
-        }
-        return text; // Return original text if translation fails
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Any additional code to run when content is loaded can go here
-      });
-    </script>
+    <script src="assets/js/toggle-menu.js"></script>
   </body>
 </html>

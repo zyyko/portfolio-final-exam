@@ -242,11 +242,79 @@ section {
 
 .home-content {
   animation: slide-in-from-right 1s ease-out forwards;
-  animation-delay: 0.5s; /* Little delay for home-content */
+  animation-delay: 0.5s;
 }
 
 .home-img {
   animation: float 3s ease-in-out infinite;
-  animation-delay: 1s; /* Float starts after a brief delay */
-  animation-fill-mode: both; /* Ensures it continues floating after the first cycle */
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column-reverse; /* Content goes below the image */
+    gap: 5rem;
+    padding: 5rem 5%;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.3rem;
+  }
+
+  .home-img img {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .social-icons a {
+    font-size: 2.5rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .btn-group .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    font-size: 1.1rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .social-icons a {
+    font-size: 2rem;
+  }
+
+  .btn-group .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1.2rem;
+  }
 }

@@ -74,16 +74,3 @@ particlesJS("background", {
   // Detect retina displays
   retina_detect: true,
 });
-
-//Slider Script
-
-$(".custom-carousel").owlCarousel({
-  autoWidth: true,
-  loop: true,
-});
-$(document).ready(function () {
-  $(".custom-carousel .item").click(function () {
-    $(".custom-carousel .item").not($(this)).removeClass("active");
-    $(this).toggleClass("active");
-  });
-});

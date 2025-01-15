@@ -216,4 +216,113 @@
   font-size: 2rem; /* Increased the font size for skill labels */
 }
 
-/* Sliding Effect */
+@media (max-width: 1024px) {
+  .skill-main {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-left,
+  .skill-right {
+    text-align: center;
+  }
+
+  .main-text span {
+    font-size: 3rem; /* Adjusted for smaller screens */
+  }
+
+  .main-text h2 {
+    font-size: 2.5rem; /* Adjusted for smaller screens */
+  }
+
+  .skill-main h3 {
+    font-size: 2.5rem; /* Adjusted for smaller screens */
+  }
+
+  .skill-bar .info p {
+    font-size: 1.8rem; /* Adjusted for smaller screens */
+  }
+
+  .box .text big {
+    font-size: 1.8rem; /* Adjusted for smaller screens */
+  }
+
+  .box .text small {
+    font-size: 1.6rem; /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-text span {
+    font-size: 2.5rem; /* Adjusted for even smaller screens */
+  }
+
+  .main-text h2 {
+    font-size: 2rem; /* Adjusted for even smaller screens */
+  }
+
+  .skill-main h3 {
+    font-size: 2rem; /* Adjusted for even smaller screens */
+  }
+
+  .skill-bar .info p {
+    font-size: 1.5rem; /* Adjusted for even smaller screens */
+  }
+
+  .box .text big {
+    font-size: 1.6rem; /* Adjusted for even smaller screens */
+  }
+
+  .box .text small {
+    font-size: 1.4rem; /* Adjusted for even smaller screens */
+  }
+
+  .skill-main {
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .professional {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-text span {
+    font-size: 2rem; /* Further adjustment for very small screens */
+  }
+
+  .main-text h2 {
+    font-size: 1.8rem; /* Further adjustment for very small screens */
+  }
+
+  .skill-main h3 {
+    font-size: 1.8rem; /* Further adjustment for very small screens */
+  }
+
+  .skill-bar .info p {
+    font-size: 1.4rem; /* Further adjustment for very small screens */
+  }
+
+  .box .text big {
+    font-size: 1.4rem; /* Further adjustment for very small screens */
+  }
+
+  .box .text small {
+    font-size: 1.2rem; /* Further adjustment for very small screens */
+  }
+
+  .skill-main {
+    grid-template-columns: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .professional {
+    grid-template-columns: 1fr;
+  }
+}
