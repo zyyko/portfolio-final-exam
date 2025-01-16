@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="keywords" content="portfolio, cv, final, exam" />
+    <meta
+      name="description"
+      content="A modern portfolio CV for my final exams, showcasing my education, experience, skills, hobbies, and services"
+    />
+    <title>Home | Modern Portfolio</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -16,7 +21,16 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="assets/styles/home_style.css" />
-    <style></style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Zakaria TAOUAF",
+        "name": "<%= firstname %>",
+        "url": "https://portfolio-final-exam.onrender.com/",
+        "jobTitle": "Portfolio Owner",
+        "description": "I'm a professional specializing in modern web development, design, and innovative projects."
+      }
+    </script>
   </head>
   <body>
     <div id="background">
@@ -66,4 +80,5 @@
     src="https://cdn.gtranslate.net/widgets/latest/float.js"
     defer
   ></script>
+  <script></script>
 </html>

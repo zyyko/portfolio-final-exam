@@ -126,6 +126,7 @@ body {
 @media (max-width: 768px) {
   #menu-icon {
     display: block;
+    cursor: pointer;
   }
 
   .navbar {
@@ -163,9 +164,5 @@ body {
 
   .gradient-btn {
     display: none;
-  }
-
-  #menu-icon {
-    cursor: pointer;
   }
 }

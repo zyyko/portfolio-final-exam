@@ -39,9 +39,7 @@ app.use("/test", (req, res) => {
   res.render("test");
 });
 
-const host = "0.0.0.0";
-
 // Start the server
-app.listen(3000, host, function () {
-  console.log(`Server is running at http://${host}:${3000}`);
+app.listen(3000, function () {
+  console.log(`Server is running at http://localhost:${3000}`);
 });
