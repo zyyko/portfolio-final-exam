@@ -18,12 +18,11 @@ router.post("/", async function (req, res) {
   }
 
   try {
-    // Configure the email transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "pfe.laravel@gmail.com", // Replace with your email
-        pass: "cjpjdzyekbjwgphw", // Replace with your app-specific password
+        user: "pfe.laravel@gmail.com",
+        pass: "cjpjdzyekbjwgphw",
       },
     });
 
